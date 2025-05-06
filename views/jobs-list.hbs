@@ -46,9 +46,8 @@
         <p><strong>Location:</strong> {{location}}</p>
         <p><strong>Description:</strong> {{description}}</p>
         
-        {{#if technologyStack}}
-          <p><strong>Tech Stack:</strong> {{technologyStack.join ", "}}</p>
-        {{/if}}
+        <p><strong>Tech Stack:</strong> {{techStackString}}</p>
+
 
         <div class="button-container">
           <a href="/apply/{{_id}}" class="apply-btn">Apply Now</a>
