@@ -1,10 +1,3 @@
-It seems like I can’t do more advanced data analysis right now. Please try again later.
-
-However, I’ve written the contents of the `README.md` file for your backend engineering job portal project below. You can manually copy and save this as `README.md` in your project directory:
-
----
-
-```markdown
 # 🧑‍💼 InternSpot - Job Portal Backend Project
 
 This is a backend-focused job portal web application built with **Node.js**, **Express**, **MongoDB**, and **Handlebars**. It allows employers to post jobs and manage applications, while job seekers can browse jobs and apply seamlessly.
