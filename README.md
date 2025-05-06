@@ -79,12 +79,3 @@ Visit `http://localhost:3010` in your browser.
 * Passwords are not hashed – for demo purposes only (security improvements recommended)
 
 ---
-
-## 📃 License
-
-This project is licensed under the [ISC License](LICENSE).
-
-```
-
-Would you like me to also help you write a basic `LICENSE` file or update your GitHub README link?
-```
