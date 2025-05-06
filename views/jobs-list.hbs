@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Available Job Listings</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+  {{!-- <link rel="stylesheet" href="/css/jobs.css" /> --}}
+  <link rel="stylesheet" href="/css/job-list.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="/">InternSpot</a>
+    </div>
+
+    <nav id="navLinks">
+      <a href="/">Home</a>
+      <a href="/applied-jobs">Applied Jobs</a>
+      <a href="/jobs">Opportunities</a>
+      {{!-- <a href="#">Contact</a> --}}
+      <a href="/login" class="login">Log In</a>
+      <a href="/signup" class="sign-up">Sign Up</a>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
+
+  <h1>Available Job Listings</h1>
+
+  <div class="job-list">
+    {{#each jobs}}
+      <div class="job-card">
+        <h3>{{title}}</h3>
+        <p><strong>Company:</strong> {{company}}</p>
+        <p><strong>Location:</strong> {{location}}</p>
+        <p><strong>Description:</strong> {{description}}</p>
+        
+        {{#if technologyStack}}
+          <p><strong>Tech Stack:</strong> {{technologyStack.join ", "}}</p>
+        {{/if}}
+
+        <div class="button-container">
+          <a href="/apply/{{_id}}" class="apply-btn">Apply Now</a>
+          <!-- Add the View Details button here -->
+          <a href="/job/{{_id}}" class="view-details-btn">View Details</a>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</body>
+</html>

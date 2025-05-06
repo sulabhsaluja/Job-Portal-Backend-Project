@@ -1,0 +1,98 @@
+/* Reset some default spacing */
+body, h1, form, input, textarea, button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Header */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+}
+
+/* Hero section */
+.hero {
+  background-color: #03045e;
+  color: white;
+  padding: 100px;
+  text-align: center;
+  margin-top: 71px;
+}
+
+.hero h1 {
+  font-size: 32px;
+}
+
+/* Categories section (form container) */
+.categories {
+    margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Form styling */
+.post-job-form {
+  background-color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-job-form input,
+.post-job-form textarea {
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.post-job-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.post-job-form button {
+  padding: 12px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.post-job-form button:hover {
+  background-color: #004999;
+}

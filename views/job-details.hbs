@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Job Details - {{title}}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    /* General body styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #2c3e50;
+      padding: 10px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    header .logo a {
+      text-decoration: none;
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    header .nav-links a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    header .nav-links a:hover {
+      color: #e74c3c;
+    }
+
+    /* Add some margin to the body to avoid navbar overlap */
+    body {
+      padding-top: 60px; /* This gives space for the fixed navbar */
+    }
+
+    /* Hero section styling */
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #ffffff;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    /* Button styling */
+    .apply-btn {
+      display: block;
+      width: 200px;
+      padding: 12px;
+      margin: 20px auto;
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .apply-btn:hover {
+      background-color: #e74c3c;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .apply-btn {
+        font-size: 16px;
+        width: 180px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  {{#if user}}
+  {{#if (eq user.role "employer")}}
+    <header>
+      <div class="logo"><a href="/">InternSpot</a></div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/post-job">Post Job</a>
+        <a href="/manage-applications">Manage Applications</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
+  {{/if}}
+{{/if}}
+
+  <header>
+    <div class="logo"><a href="/">InternSpot</a></div>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>{{title}}</h1>
+    <p><strong>Company:</strong> {{company}}</p>
+    <p><strong>Location:</strong> {{location}}</p>
+    <p><strong>Salary:</strong> ₹{{salary}}</p>
+    <p><strong>Technologies:</strong> {{technologyStack}}</p>
+    <p><strong>Description:</strong> {{description}}</p>
+    <a href="/apply/{{jobId}}" class="apply-btn">Apply for Job</a>
+  </section>
+
+</body>
+</html>

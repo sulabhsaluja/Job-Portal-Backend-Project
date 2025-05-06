@@ -1,0 +1,62 @@
+/* Reset default spacing */
+body, h1, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+  }
+  
+  /* Page heading */
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #03045e;
+  }
+  
+  /* Applied jobs list */
+  ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  li {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  li h3 {
+    font-size: 20px;
+    color: #0066cc;
+    margin-bottom: 10px;
+  }
+  
+  li p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  li hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid #ddd;
+  }
+  
+  /* Empty state */
+  p {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  

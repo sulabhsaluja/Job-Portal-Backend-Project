@@ -1,0 +1,45 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <link rel="stylesheet" href="/css/login.css" />
+
+  </head>
+  <body>
+    <div class="login-box">
+      <p>Login</p>
+      <form id="loginForm" action="/login" method="POST">
+        <div class="user-box">
+          <input required name="email" type="text" id="loginEmail" />
+          <label>Email</label>
+        </div>
+        <div class="user-box">
+          <input required name="password" type="password" id="loginPassword" />
+          <label>Password</label>
+        </div>
+        <button class="button" type="submit">
+          <div class="blob1"></div>
+          <div class="blob2"></div>
+          <div class="inner">Submit</div>
+        </button>
+      </form>
+      <p>Don't have an account? <a href="/signup" class="a2">Sign up!</a></p>
+    </div>
+
+    
+    <div class="rings"></div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.rings.min.js"
+    ></script>
+    <script>
+      VANTA.RINGS({ el: ".rings", mouseControls: true, touchControls: true,
+      gyroControls: false, minHeight: 200.00, minWidth: 200.00, scale: 1.00,
+      scaleMobile: 1.00 })
+    </script>
+  </body>
+</html>

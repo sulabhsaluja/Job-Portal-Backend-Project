@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/signup.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest"></script>
+  </head>
+  <body>
+    <form class="form" action="/signup" method="POST">
+      <h2><p class="title">Sign Up</p></h2>
+      <p class="message">Signup now and get full access to our app.</p>
+
+      <!-- Other form fields remain the same -->
+      <div class="form-control">
+        <input name="username" type="text" required />
+        <label><span>U</span><span>s</span><span>e</span><span>r</span><span>n</span><span>a</span><span>m</span><span>e</span></label>
+      </div>
+
+      <div class="form-control">
+        <input name="phone" type="number" required />
+        <label><span>P</span><span>h</span><span>o</span><span>n</span><span>e</span><span> </span><span>N</span><span>u</span><span>m</span><span>b</span><span>e</span><span>r</span></label>
+      </div>
+
+      <div class="form-control">
+        <input name="dob" type="text" required onfocus="this.type='date'" />
+        <label><span>D</span><span>a</span><span>t</span><span>e</span><span> </span><span>o</span><span>f</span><span> </span><span>B</span><span>i</span><span>r</span><span>t</span><span>h</span></label>
+      </div>
+
+      <label class="gender-label"><span>Gender:</span>
+        <div class="radio-container">
+          <div class="radio-wrapper">
+            <label class="radio-button">
+              <input id="male" name="gender" value="male" type="radio" required />
+              <span class="radio-checkmark"></span>
+              <span class="radio-label">Male</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label class="radio-button">
+              <input id="female" name="gender" value="female" type="radio" />
+              <span class="radio-checkmark"></span>
+              <span class="radio-label">Female</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label class="radio-button">
+              <input id="other" name="gender" value="other" type="radio" />
+              <span class="radio-checkmark"></span>
+              <span class="radio-label">Other</span>
+            </label>
+          </div>
+        </div>
+      </label>
+
+      <div class="form-control">
+        <input name="email" type="email" required />
+        <label><span>E</span><span>m</span><span>a</span><span>i</span><span>l</span></label>
+      </div>
+
+      <div class="form-control">
+        <input name="password" type="password" required />
+        <label><span>P</span><span>a</span><span>s</span><span>s</span><span>w</span><span>o</span><span>r</span><span>d</span></label>
+      </div>
+
+      <div class="form-control">
+        <input name="confirm_password" type="password" required />
+        <label><span>C</span><span>o</span><span>n</span><span>f</span><span>i</span><span>r</span><span>m</span><span> </span><span>P</span><span>a</span><span>s</span><span>s</span><span>w</span><span>o</span><span>r</span><span>d</span></label>
+      </div>
+
+      <div class="flex">
+        <div class="form-control">
+          <input name="street" type="text" required />
+          <label><span>S</span><span>t</span><span>r</span><span>e</span><span>e</span><span>t</span><span> </span><span>A</span><span>d</span><span>d</span><span>r</span><span>e</span><span>s</span><span>s</span></label>
+        </div>
+        <div class="form-control">
+          <input name="city" type="text" required />
+          <label><span>C</span><span>i</span><span>t</span><span>y</span></label>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <input name="state" type="text" required />
+        <label><span>S</span><span>t</span><span>a</span><span>t</span><span>e</span></label>
+      </div>
+
+      <div class="form-control">
+        <input name="country" type="text" required />
+        <label><span>C</span><span>o</span><span>u</span><span>n</span><span>t</span><span>r</span><span>y</span></label>
+      </div>
+
+      <!-- Role Selection -->
+      <label class="gender-label"><span>Register As:</span>
+        <div class="radio-container">
+          <div class="radio-wrapper">
+            <label class="radio-button">
+              <input id="employer" name="role" value="employer" type="radio" required />
+              <span class="radio-checkmark"></span>
+              <span class="radio-label">Employer</span>
+            </label>
+          </div>
+          <div class="radio-wrapper">
+            <label class="radio-button">
+              <input id="jobseeker" name="role" value="jobseeker" type="radio" />
+              <span class="radio-checkmark"></span>
+              <span class="radio-label">Job Seeker</span>
+            </label>
+          </div>
+        </div>
+      </label>
+
+      <button type="submit" class="btn">Sign Up</button>
+      <p class="signin">Already have an account? <a href="/login" class="signin-link">Sign in</a></p>
+    </form>
+
+    <div class="net"></div>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: ".net",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x00bfff,
+        backgroundColor: 0x0
+      });
+    </script>
+  </body>
+</html>
