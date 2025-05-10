@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Apply for Job</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply for Job</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
 
-  <style>
+    <style>
     /* Reset default spacing */
     *, *::before, *::after {
       margin: 0;
@@ -122,27 +121,27 @@
       }
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  <div>
-    <h1>Apply for Job</h1>
+    <div>
+      <h1>Apply for Job</h1>
 
-    <form action="/submit-application" method="POST" class="post-job-form">
-      <input type="hidden" name="jobId" value="{{jobId}}" />
+      <form action="/submit-application" method="POST" class="post-job-form">
+        <input type="hidden" name="jobId" value="{{jobId}}" />
 
-      <label for="fullName">Full Name:</label>
-      <input type="text" id="fullName" name="fullName" required>
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="coverLetter">Cover Letter:</label>
-      <textarea id="coverLetter" name="coverLetter" required></textarea>
+        <label for="coverLetter">Cover Letter:</label>
+        <textarea id="coverLetter" name="coverLetter" required></textarea>
 
-      <button type="submit">Submit Application</button>
-    </form>
-  </div>
+        <button type="submit">Submit Application</button>
+      </form>
+    </div>
 
-</body>
+  </body>
 </html>

@@ -1,56 +1,55 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Applied Jobs</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/applied-jobs.css" />
-  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+  <head>
+    <title>Applied Jobs</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/applied-jobs.css" />
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
 
-</head>
-<body>
+  </head>
+  <body>
 
-      <header>
-  <div class="logo">
-    <a href="/">InternSpot</a>
-  </div>
+    <header>
+      <div class="logo">
+        <a href="/">InternSpot</a>
+      </div>
 
-  <nav id="navLinks">
-    <a href="/">Home</a>
-    <a href="/applied-jobs">Applied Jobs</a>
-    <a href="/jobs">Opportunities</a>
-    {{!-- <a href="#">Contact</a> --}}
-    <a href="/login" class="login">Log In</a>
-    <a href="/signup" class="sign-up">Sign Up</a>
-  </nav>
+      <nav id="navLinks">
+        <a href="/">Home</a>
+        <a href="/applied-jobs">Applied Jobs</a>
+        <a href="/jobs">Opportunities</a>
+        <a href="/login" class="login">Log In</a>
+        <a href="/signup" class="sign-up">Sign Up</a>
+      </nav>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</header>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
 
-<script>
+    <script>
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
   }
 </script>
 
-  <h1>My Applied Jobs</h1>
+    <h1>My Applied Jobs</h1>
 
-  {{#if appliedJobs.length}}
+    {{#if appliedJobs.length}}
     <ul>
       {{#each appliedJobs}}
-        <li>
-          <h3>{{title}} at {{company}} ({{location}})</h3>
-          <p><strong>Cover Letter:</strong> {{{coverLetter}}}</p>
-          <p><strong>Status:</strong> {{status}}</p>
-        </li>
-        <hr />
+      <li>
+        <h3>{{title}} at {{company}} ({{location}})</h3>
+        <p><strong>Cover Letter:</strong> {{{coverLetter}}}</p>
+        <p><strong>Status:</strong> {{status}}</p>
+      </li>
+      <hr />
       {{/each}}
     </ul>
-  {{else}}
+    {{else}}
     <p>You haven’t applied for any jobs yet.</p>
-  {{/if}}
-</body>
+    {{/if}}
+  </body>
 </html>

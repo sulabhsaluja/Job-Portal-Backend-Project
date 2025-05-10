@@ -7,132 +7,125 @@
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
     <title>InternSpot</title>
 
-
-    
-
     <header>
-  <div class="logo">
-    <a href="/">InternSpot</a>
-  </div>
+      <div class="logo">
+        <a href="/">InternSpot</a>
+      </div>
 
-  <nav id="navLinks">
-    <a href="/">Home</a>
-    <a href="/applied-jobs">Applied Jobs</a>
-    <a href="/jobs">Opportunities</a>
-    {{!-- <a href="#">Contact</a> --}}
-    <a href="/login" class="login">Log In</a>
-    <a href="/signup" class="sign-up">Sign Up</a>
-  </nav>
+      <nav id="navLinks">
+        <a href="/">Home</a>
+        <a href="/applied-jobs">Applied Jobs</a>
+        <a href="/jobs">Opportunities</a>
+        <a href="/login" class="login">Log In</a>
+        <a href="/signup" class="sign-up">Sign Up</a>
+      </nav>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</header>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </header>
 
-<script>
+    <script>
   function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
   }
 </script>
 
-
-
     <!-- HERO SECTION -->
-<section class="hero">
-  <h1>Welcome to InternSpot</h1>
-  <p>Your gateway to a better career. Search, apply, or post jobs with ease.</p>
-  <a href="/login">Get Started</a>
-</section>
+    <section class="hero">
+      <h1>Welcome to InternSpot</h1>
+      <p>Your gateway to a better career. Search, apply, or post jobs with
+        ease.</p>
+      <a href="/login">Get Started</a>
+    </section>
 
-<!-- ROLE SELECTION -->
-<section class="role-options">
-  <div class="card">
-    <h3>I'm a Job Seeker</h3>
-    <p>Browse and apply to the latest job openings.</p>
-    <a href="/jobs">Start Searching</a>
-  </div>
-  <div class="card">
-    <h3>I'm an Employer</h3>
-    <p>Post job listings and find top talent easily.</p>
-    <a href="/post-job">Post a Job</a>
-  </div>
-</section>
-
-<!-- TRENDING JOBS -->
-<section class="trending-section">
-  <h2>Trending Jobs</h2>
-  <div class="card-slider">
-    <div class="card-track">
-      <!-- Repeatable Card -->
-      <div class="job-card">
-        <h3>Frontend Developer</h3>
-        <p>Company: TechNova</p>
-        <p>Location: Remote</p>
+    <!-- ROLE SELECTION -->
+    <section class="role-options">
+      <div class="card">
+        <h3>I'm a Job Seeker</h3>
+        <p>Browse and apply to the latest job openings.</p>
+        <a href="/jobs">Start Searching</a>
       </div>
-
-      <div class="job-card">
-        <h3>Java Backend Engineer</h3>
-        <p>Company: CodeWave</p>
-        <p>Location: Bangalore</p>
+      <div class="card">
+        <h3>I'm an Employer</h3>
+        <p>Post job listings and find top talent easily.</p>
+        <a href="/post-job">Post a Job</a>
       </div>
+    </section>
 
-      <div class="job-card">
-        <h3>UI/UX Designer</h3>
-        <p>Company: DesignHut</p>
-        <p>Location: Mumbai</p>
+    <!-- TRENDING JOBS -->
+    <section class="trending-section">
+      <h2>Trending Jobs</h2>
+      <div class="card-slider">
+        <div class="card-track">
+          <!-- Repeatable Card -->
+          <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p>Company: TechNova</p>
+            <p>Location: Remote</p>
+          </div>
+
+          <div class="job-card">
+            <h3>Java Backend Engineer</h3>
+            <p>Company: CodeWave</p>
+            <p>Location: Bangalore</p>
+          </div>
+
+          <div class="job-card">
+            <h3>UI/UX Designer</h3>
+            <p>Company: DesignHut</p>
+            <p>Location: Mumbai</p>
+          </div>
+
+          <div class="job-card">
+            <h3>Data Scientist</h3>
+            <p>Company: AI Labs</p>
+            <p>Location: Hyderabad</p>
+          </div>
+
+          <!-- Duplicate cards for infinite scroll illusion -->
+          <div class="job-card">
+            <h3>Frontend Developer</h3>
+            <p>Company: TechNova</p>
+            <p>Location: Remote</p>
+          </div>
+
+          <div class="job-card">
+            <h3>Java Backend Engineer</h3>
+            <p>Company: CodeWave</p>
+            <p>Location: Bangalore</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="job-card">
-        <h3>Data Scientist</h3>
-        <p>Company: AI Labs</p>
-        <p>Location: Hyderabad</p>
+    <!-- POPULAR CATEGORIES -->
+    <section class="categories">
+      <h2>Explore Job Categories</h2>
+      <div class="category-cards">
+        <div class="cat-card">💻 IT & Software</div>
+        <div class="cat-card">📈 Business & Finance</div>
+        <div class="cat-card">🩺 Healthcare</div>
+        <div class="cat-card">🎨 Design</div>
+        <div class="cat-card">⚖️ Legal</div>
       </div>
+    </section>
 
-      <!-- Duplicate cards for infinite scroll illusion -->
-      <div class="job-card">
-        <h3>Frontend Developer</h3>
-        <p>Company: TechNova</p>
-        <p>Location: Remote</p>
-      </div>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+      <h2>What Our Users Say</h2>
+      <blockquote>"This platform helped me land my dream job in just 2 weeks!" –
+        Riya, Developer</blockquote>
+      <blockquote>"We found amazing talent for our startup – super easy!" –
+        Nikhil, Startup Founder</blockquote>
+    </section>
 
-      <div class="job-card">
-        <h3>Java Backend Engineer</h3>
-        <p>Company: CodeWave</p>
-        <p>Location: Bangalore</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- POPULAR CATEGORIES -->
-<section class="categories">
-  <h2>Explore Job Categories</h2>
-  <div class="category-cards">
-    <div class="cat-card">💻 IT & Software</div>
-    <div class="cat-card">📈 Business & Finance</div>
-    <div class="cat-card">🩺 Healthcare</div>
-    <div class="cat-card">🎨 Design</div>
-    <div class="cat-card">⚖️ Legal</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <h2>What Our Users Say</h2>
-  <blockquote>"This platform helped me land my dream job in just 2 weeks!" – Riya, Developer</blockquote>
-  <blockquote>"We found amazing talent for our startup – super easy!" – Nikhil, Startup Founder</blockquote>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; 2025 JobFinder. All rights reserved.</p>
-</footer>
-
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 InternSpot. All rights reserved.</p>
+    </footer>
 
     <script>
       function toggleMenu() {

@@ -1,6 +1,6 @@
 /* Base Styling */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, #f0f8ff, #ffffff);
   color: #333;
   padding: 100px 20px 40px;
@@ -34,13 +34,11 @@ h1 {
   flex-direction: column;
   justify-content: space-between;
   min-height: 400px; /* or desired height */
-  
 }
 
 .job-card:hover {
   transform: scale(1.02);
 }
-
 
 /* Job Title */
 .job-card h3 {
@@ -98,6 +96,12 @@ h1 {
 
 /* Animation */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

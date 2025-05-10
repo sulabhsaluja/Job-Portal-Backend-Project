@@ -14,7 +14,6 @@
 //   res.render('jobs-list', { jobs: processedJobs });
 // });
 
-
 // router.get('/job/:jobId', async (req, res) => {
 //   const job = await Job.findById(req.params.jobId);
 //   if (!job) return res.status(404).send("Job not found.");
@@ -58,14 +57,6 @@
 // });
 
 // module.exports = router;
-
-
-
-
-
-
-
-
 
 // const express = require('express');
 // const router = express.Router();
@@ -153,15 +144,11 @@
 
 // module.exports = router;
 
-
-
-
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Job = require('../models/job');
+const Job = require("../models/job");
 
-router.get('/jobs', async (req, res) => {
+router.get("/jobs", async (req, res) => {
   try {
     const { search, location, tech, company, sort } = req.query;
 
@@ -169,54 +156,54 @@ router.get('/jobs', async (req, res) => {
 
     // Filter by job title (search)
     if (search) {
-      filter.title = { $regex: new RegExp(search, 'i') };
+      filter.title = { $regex: new RegExp(search, "i") };
     }
 
     // Filter by location
     if (location) {
-      filter.location = { $regex: new RegExp(location, 'i') };
+      filter.location = { $regex: new RegExp(location, "i") };
     }
 
     // Filter by company
     if (company) {
-      filter.company = { $regex: new RegExp(company, 'i') };
+      filter.company = { $regex: new RegExp(company, "i") };
     }
 
     // Filter by technology stack
     if (tech) {
-      filter.technologyStack = { $in: [new RegExp(tech, 'i')] };
+      filter.technologyStack = { $in: [new RegExp(tech, "i")] };
     }
 
     // Sorting logic
     let sortOption = { postedAt: -1 }; // default
-    if (sort === 'salary_asc') {
+    if (sort === "salary_asc") {
       sortOption = { salary: 1 };
-    } else if (sort === 'salary_desc') {
+    } else if (sort === "salary_desc") {
       sortOption = { salary: -1 };
     }
 
     const jobs = await Job.find(filter).sort(sortOption);
 
-    const processedJobs = jobs.map(job => ({
+    const processedJobs = jobs.map((job) => ({
       ...job.toObject(),
-      techStackString: job.technologyStack?.join(", ") || "N/A"
+      techStackString: job.technologyStack?.join(", ") || "N/A",
     }));
 
-    res.render('jobs-list', {
+    res.render("jobs-list", {
       jobs: processedJobs,
       search,
       location,
       company,
       tech,
-      sort
+      sort,
     });
   } catch (error) {
-    console.error('Error loading jobs:', error);
-    res.status(500).send('Internal Server Error');
+    console.error("Error loading jobs:", error);
+    res.status(500).send("Internal Server Error");
   }
 });
 
-router.get('/job/:jobId', async (req, res) => {
+router.get("/job/:jobId", async (req, res) => {
   const job = await Job.findById(req.params.jobId);
   if (!job) return res.status(404).send("Job not found.");
 
@@ -231,7 +218,7 @@ router.get('/job/:jobId', async (req, res) => {
   });
 });
 
-router.get('/apply/:jobId', (req, res) => {
+router.get("/apply/:jobId", (req, res) => {
   if (!req.session.user) return res.redirect("/login");
   res.render("job-application", { jobId: req.params.jobId });
 });

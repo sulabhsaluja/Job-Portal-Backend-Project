@@ -1,13 +1,15 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const Job = require('../models/job');
+const Job = require("../models/job");
 
-router.get('/applied-jobs', async (req, res) => {
-  const jobs = await Job.find({ "applications.0": { $exists: true } }).populate("applications.user");
+router.get("/applied-jobs", async (req, res) => {
+  const jobs = await Job.find({ "applications.0": { $exists: true } }).populate(
+    "applications.user"
+  );
 
   const appliedJobs = [];
-  jobs.forEach(job => {
-    job.applications.forEach(application => {
+  jobs.forEach((job) => {
+    job.applications.forEach((application) => {
       appliedJobs.push({
         title: job.title,
         company: job.company,

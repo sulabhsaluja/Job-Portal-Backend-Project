@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Job Details - {{title}}</title>
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-  <style>
+  <head>
+    <meta charset="UTF-8">
+    <title>Job Details - {{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <style>
     /* General body styles */
     body {
       font-family: Arial, sans-serif;
@@ -113,11 +113,11 @@
       }
     }
   </style>
-</head>
-<body>
+  </head>
+  <body>
 
-  {{#if user}}
-  {{#if (eq user.role "employer")}}
+    {{#if user}}
+    {{#if (eq user.role "employer")}}
     <header>
       <div class="logo"><a href="/">InternSpot</a></div>
       <nav class="nav-links">
@@ -127,25 +127,25 @@
         <a href="/logout">Logout</a>
       </nav>
     </header>
-  {{/if}}
-{{/if}}
+    {{/if}}
+    {{/if}}
 
-  <header>
-    <div class="logo"><a href="/">InternSpot</a></div>
-    <nav class="nav-links">
-      <a href="/">Home</a>
-    </nav>
-  </header>
+    <header>
+      <div class="logo"><a href="/">InternSpot</a></div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <h1>{{title}}</h1>
-    <p><strong>Company:</strong> {{company}}</p>
-    <p><strong>Location:</strong> {{location}}</p>
-    <p><strong>Salary:</strong> ₹{{salary}}</p>
-    <p><strong>Technologies:</strong> {{technologyStack}}</p>
-    <p><strong>Description:</strong> {{description}}</p>
-    <a href="/apply/{{jobId}}" class="apply-btn">Apply for Job</a>
-  </section>
+    <section class="hero">
+      <h1>{{title}}</h1>
+      <p><strong>Company:</strong> {{company}}</p>
+      <p><strong>Location:</strong> {{location}}</p>
+      <p><strong>Salary:</strong> ₹{{salary}}</p>
+      <p><strong>Technologies:</strong> {{technologyStack}}</p>
+      <p><strong>Description:</strong> {{description}}</p>
+      <a href="/apply/{{jobId}}" class="apply-btn">Apply for Job</a>
+    </section>
 
-</body>
+  </body>
 </html>

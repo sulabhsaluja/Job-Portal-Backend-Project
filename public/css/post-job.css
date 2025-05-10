@@ -1,5 +1,10 @@
 /* Reset some default spacing */
-body, h1, form, input, textarea, button {
+body,
+h1,
+form,
+input,
+textarea,
+button {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -19,7 +24,6 @@ header {
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  
 }
 
 .logo a {
@@ -51,7 +55,7 @@ header {
 
 /* Categories section (form container) */
 .categories {
-    margin-top: -20px;
+  margin-top: -20px;
   display: flex;
   justify-content: center;
   padding: 40px 20px;
@@ -62,7 +66,7 @@ header {
   background-color: white;
   padding: 30px 40px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px;
   display: flex;

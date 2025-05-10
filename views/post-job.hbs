@@ -1,113 +1,60 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Post a Job</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/post-job.css">
-  <script src="/js/post-job.js"></script>
-</head>
-<body>
-
-  {{#if user}}
-    {{#if (eq user.role "employer")}}
-      <header>
-        <div class="logo"><a href="/">InternSpot</a></div>
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/post-job">Post Job</a>
-          <a href="/manage-applications">Manage Applications</a>
-          <a href="/logout">Logout</a>
-        </nav>
-      </header>
-    {{else}}
-      <header>
-        <div class="logo"><a href="/">InternSpot</a></div>
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/jobs">Jobs</a>
-          <a href="/my-applications">My Applications</a>
-          <a href="/logout">Logout</a>
-        </nav>
-      </header>
-    {{/if}}
-  {{/if}}
-
-  <section class="hero">
-    <h1>Post a New Job</h1>
-  </section>
-
-  <section class="categories">
-    <form action="/post-job" method="POST" class="post-job-form">
-      <input type="text" name="title" placeholder="Job Title" required><br><br>
-      <input type="text" name="company" placeholder="Company Name" required><br><br>
-      <input type="text" name="location" placeholder="Location" required><br><br>
-      <textarea name="description" placeholder="Job Description" required></textarea><br><br>
-      <input type="text" name="technologyStack" placeholder="Technology Stack (comma-separated)"><br><br>
-      <button type="submit">Post Job</button>
-    </form>
-  </section>
-
-</body>
-</html> --}}
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Post a Job</title>
-  <link rel="stylesheet" href="/css/styles.css" />
-  <link rel="stylesheet" href="/css/post-job.css">
-  <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-  <script src="/js/post-job.js"></script>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/post-job.css">
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
+    <script src="/js/post-job.js"></script>
+  </head>
+  <body>
 
-  {{#if user}}
+    {{#if user}}
     {{#if (eq user.role "employer")}}
-      <header>
-        <div class="logo"><a href="/">InternSpot</a></div>
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/post-job">Post Job</a>
-          <a href="/manage-applications">Manage Applications</a>
-          <a href="/logout">Logout</a>
-        </nav>
-      </header>
+    <header>
+      <div class="logo"><a href="/">InternSpot</a></div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/post-job">Post Job</a>
+        <a href="/manage-applications">Manage Applications</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
     {{else}}
-      <header>
-        <div class="logo"><a href="/">InternSpot</a></div>
-        <nav class="nav-links">
-          <a href="/">Home</a>
-          <a href="/jobs">Jobs</a>
-          <a href="/my-applications">My Applications</a>
-          <a href="/logout">Logout</a>
-        </nav>
-      </header>
+    <header>
+      <div class="logo"><a href="/">InternSpot</a></div>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="/jobs">Jobs</a>
+        <a href="/my-applications">My Applications</a>
+        <a href="/logout">Logout</a>
+      </nav>
+    </header>
     {{/if}}
-  {{/if}}
+    {{/if}}
 
-  <section class="hero">
-    <h1>Post a New Job</h1>
-  </section>
+    <section class="hero">
+      <h1>Post a New Job</h1>
+    </section>
 
-  <section class="categories">
-    <form action="/post-job" method="POST" class="post-job-form">
-      <input type="text" name="title" placeholder="Job Title" required><br><br>
-      <input type="text" name="company" placeholder="Company Name" required><br><br>
-      <input type="text" name="location" placeholder="Location" required><br><br>
-      <input type="number" name="salary" placeholder="Salary (₹)" required><br><br> <!-- Added salary field -->
-      <textarea name="description" placeholder="Job Description" required></textarea><br><br>
-      <input type="text" name="technologyStack" placeholder="Technology Stack (comma-separated)"><br><br>
-      <button type="submit">Post Job</button>
-    </form>
-  </section>
+    <section class="categories">
+      <form action="/post-job" method="POST" class="post-job-form">
+        <input type="text" name="title" placeholder="Job Title"
+          required><br><br>
+        <input type="text" name="company" placeholder="Company Name"
+          required><br><br>
+        <input type="text" name="location" placeholder="Location"
+          required><br><br>
+        <input type="number" name="salary" placeholder="Salary (₹)"
+          required><br><br> <!-- Added salary field -->
+        <textarea name="description" placeholder="Job Description"
+          required></textarea><br><br>
+        <input type="text" name="technologyStack"
+          placeholder="Technology Stack (comma-separated)"><br><br>
+        <button type="submit">Post Job</button>
+      </form>
+    </section>
 
-</body>
+  </body>
 </html>
