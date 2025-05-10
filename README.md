@@ -57,7 +57,7 @@ npm install
 node server.js
 ```
 
-Visit `http://localhost:3010` in your browser.
+Visit `http://localhost:3000` in your browser.
 
 ---
 
@@ -74,7 +74,7 @@ Visit `http://localhost:3010` in your browser.
 
 ## 📌 Notes
 
-* Default port is **3010**
+* Default port is **3000**
 * Views are rendered using `.hbs` templates
 * Passwords are not hashed – for demo purposes only (security improvements recommended)
 
