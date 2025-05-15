@@ -46,7 +46,7 @@ Demo Project/
 ### Installation
 
 ```bash
-git clone [https://github.com/your-username/demo-project.git](https://github.com/sulabhsaluja/Job-Portal-Backend-Project.git)
+<pre> ## Clone the Repository ```bash git clone https://github.com/sulabhsaluja/Job-Portal-Backend-Project.git ``` </pre>
 cd demo-project
 npm install
 ````
