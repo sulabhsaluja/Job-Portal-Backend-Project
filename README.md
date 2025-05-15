@@ -57,7 +57,6 @@ npm install
 
 ### Running the App
 
-```bash
 node server.js
 ```
 
