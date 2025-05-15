@@ -45,11 +45,15 @@ Demo Project/
 
 ### Installation
 
+## 🚀 Installation
+
+Clone the repository and install dependencies:
+
 ```bash
-<pre> ## Clone the Repository ```bash git clone https://github.com/sulabhsaluja/Job-Portal-Backend-Project.git ``` </pre>
-cd demo-project
+git clone https://github.com/sulabhsaluja/Job-Portal-Backend-Project.git
+cd Job-Portal-Backend-Project
 npm install
-````
+
 
 ### Running the App
 
