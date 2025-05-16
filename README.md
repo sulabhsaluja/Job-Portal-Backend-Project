@@ -81,4 +81,10 @@ Visit `http://localhost:3000` in your browser.
 * Views are rendered using `.hbs` templates
 * Passwords are not hashed – for demo purposes only (security improvements recommended)
 
+
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
 ---
