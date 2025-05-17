@@ -6,157 +6,26 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/job-list.css" />
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
-    <style>
-    .search-filter-form input,
-    .search-filter-form select,
-    .search-filter-form button {
-      padding: 10px;
-      margin: 5px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .search-filter-form button {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-
-    .search-filter-form button:hover {
-      background-color: #0056b3;
-    }
-
-    .tech-tag {
-      background-color: #e0e0e0;
-      color: #333;
-      padding: 4px 8px;
-      border-radius: 4px;
-      text-decoration: none;
-      margin-right: 5px;
-      display: inline-block;
-      font-size: 0.9em;
-    }
-
-    .tech-tag:hover {
-      background-color: #c0c0c0;
-    }
-
-    .no-results {
-      text-align: center;
-      color: red;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-  </style>
   </head>
   <body>
-
-    <header>
-      <div class="logo">
-        <a href="/">InternSpot</a>
-      </div>
-
-      <nav id="navLinks">
-        <a href="/">Home</a>
-        <a href="/applied-jobs">Applied Jobs</a>
-        <a href="/jobs">Opportunities</a>
-        <a href="/login" class="login">Log In</a>
-        <a href="/signup" class="sign-up">Sign Up</a>
-      </nav>
-
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </header>
-
-    <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-  </script>
+    {{> navbar}}
 
     <h1 style="text-align: center;">Available Job Listings</h1>
 
-    <!-- 🔍 Search and Filter Form -->
-    <style>
-  .search-filter-form {
-    display: flex;
-    justify-content: center;
-    margin: 30px 20px;
-  }
-
-  .search-filter-form form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    max-width: 900px;
-    width: 100%;
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  .search-filter-form input,
-  .search-filter-form select {
-    flex: 1 1 180px;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    transition: border 0.3s;
-  }
-
-  .search-filter-form input:focus,
-  .search-filter-form select:focus {
-    border-color: #007bff;
-    outline: none;
-  }
-
-  .search-filter-form button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-
-  .search-filter-form button:hover {
-    background-color: #0056b3;
-  }
-
-  @media (max-width: 600px) {
-    .search-filter-form form {
-      flex-direction: column;
-    }
-  }
-</style>
+    
 
     <!-- Search and Filter Form -->
     <div class="search-filter-form">
       <form method="GET" action="/jobs">
-        <input type="text" name="search" placeholder="Search job title"
-          value="{{search}}" />
-        <input type="text" name="location" placeholder="Location"
-          value="{{location}}" />
-        <input type="text" name="company" placeholder="Company"
-          value="{{company}}" />
-        <input type="text" name="tech" placeholder="Tech Stack (e.g., Java)"
-          value="{{tech}}" />
+        <input type="text" name="search" placeholder="Search job title" value="{{search}}" />
+        <input type="text" name="location" placeholder="Location" value="{{location}}" />
+        <input type="text" name="company" placeholder="Company" value="{{company}}" />
+        <input type="text" name="tech" placeholder="Tech Stack (e.g., Java)" value="{{tech}}" />
 
         <select name="sort">
           <option value>Sort by</option>
-          <option value="salary_asc" {{#if (eq sort
-            "salary_asc")}}selected{{/if}}>Salary: Low to High</option>
-          <option value="salary_desc" {{#if (eq sort
-            "salary_desc")}}selected{{/if}}>Salary: High to Low</option>
+          <option value="salary_asc" {{#if (eq sort "salary_asc")}}selected{{/if}}>Salary: Low to High</option>
+          <option value="salary_desc" {{#if (eq sort "salary_desc")}}selected{{/if}}>Salary: High to Low</option>
         </select>
 
         <button type="submit">Search</button>
@@ -165,31 +34,30 @@
 
     <!-- ⚠️ No Jobs Found -->
     {{#unless jobs.length}}
-    <p class="no-results">No jobs found matching your criteria.</p>
+      <p class="no-results">No jobs found matching your criteria.</p>
     {{/unless}}
 
     <!-- ✅ Job List -->
     <div class="job-list">
       {{#each jobs}}
-      <div class="job-card">
-        <h3>{{title}}</h3>
-        <p><strong>Company:</strong> {{company}}</p>
-        <p><strong>Location:</strong> {{location}}</p>
-        <p><strong>Description:</strong> {{description}}</p>
+        <div class="job-card">
+          <h3>{{title}}</h3>
+          <p><strong>Company:</strong> {{company}}</p>
+          <p><strong>Location:</strong> {{location}}</p>
+          <p><strong>Description:</strong> {{description}}</p>
 
-        <p><strong>Tech Stack:</strong>
-          {{#each technologyStack}}
-          <a href="/jobs?tech={{this}}" class="tech-tag">{{this}}</a>
-          {{/each}}
-        </p>
+          <p><strong>Tech Stack:</strong>
+            {{#each technologyStack}}
+              <a href="/jobs?tech={{this}}" class="tech-tag">{{this}}</a>
+            {{/each}}
+          </p>
 
-        <div class="button-container">
-          <a href="/apply/{{_id}}" class="apply-btn">Apply Now</a>
-          <a href="/job/{{_id}}" class="view-details-btn">View Details</a>
+          <div class="button-container">
+            <a href="/apply/{{_id}}" class="apply-btn">Apply Now</a>
+            <a href="/job/{{_id}}" class="view-details-btn">View Details</a>
+          </div>
         </div>
-      </div>
       {{/each}}
     </div>
-
   </body>
 </html>

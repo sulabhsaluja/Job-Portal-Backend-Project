@@ -54,6 +54,28 @@ h1 {
   margin: 4px 0;
 }
 
+
+.tech-tag {
+  display: inline-block;
+  background-color: #e0e0e0;          /* soft silver/gray */
+  color: #2c3e50;                     /* dark gray-blue text */
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 4px 6px 4px 0;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.tech-tag:hover {
+  background-color: #2c3e50;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
 /* Apply Button */
 .button-container {
   margin-top: 20px;
@@ -75,6 +97,65 @@ h1 {
 .apply-btn:hover {
   background-color: #023e8a;
   transform: scale(1.05);
+}
+
+.search-filter-form {
+  display: flex;
+  justify-content: center;
+  margin: 30px 20px;
+}
+
+.search-filter-form form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 900px;
+  width: 100%;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-filter-form input,
+.search-filter-form select {
+  flex: 1 1 180px;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border 0.3s;
+}
+
+.search-filter-form input:focus,
+.search-filter-form select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.search-filter-form button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-filter-form button:hover {
+  background-color: #0056b3;
+}
+
+
+
+@media (max-width: 600px) {
+  .search-filter-form form {
+    flex-direction: column;
+  }
 }
 
 /* Responsive Design */

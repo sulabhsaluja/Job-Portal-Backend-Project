@@ -1,0 +1,32 @@
+<header>
+  <div class="logo">
+    <a href="/">InternSpot</a>
+  </div>
+
+  <nav id="navLinks">
+    {{#if user}}
+      {{#if (eq user.role "employer")}}
+        <a href="/">Home</a>
+        <a href="/post-job">Post Job</a>
+        <a href="/manage-applications">Manage Applications</a>
+        <a href="/logout">Logout</a>
+      {{else}}
+        <a href="/">Home</a>
+        <a href="/applied-jobs">Applied Jobs</a>
+        <a href="/jobs">Opportunities</a>
+        <a href="/logout">Logout</a>
+      {{/if}}
+    {{else}}
+      <a href="/">Home</a>
+      <a href="/jobs">Opportunities</a>
+      <a href="/login" class="login">Log In</a>
+      <a href="/signup" class="sign-up">Sign Up</a>
+    {{/if}}
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</header>

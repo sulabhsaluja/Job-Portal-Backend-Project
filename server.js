@@ -16,10 +16,14 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+// Make user globally available in templates
 app.use((req, res, next) => {
   res.locals.user = req.session.user || null;
   next();
 });
+
+// Handlebars helpers
 hbs.registerHelper("eq", (a, b) => a === b);
 
 // MongoDB Connection
@@ -33,6 +37,8 @@ mongoose
 
 // Views & Static
 app.set("view engine", "hbs");
+app.set("views", path.join(__dirname, "views")); // <- important if not already present
+hbs.registerPartials(path.join(__dirname, "views/partials")); // <- this line enables partials
 app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
@@ -42,4 +48,5 @@ app.use("/", require("./routes/jobs"));
 app.use("/", require("./routes/employer"));
 app.use("/", require("./routes/user"));
 
+// Server start
 app.listen(3000, () => console.log("Server running on http://localhost:3000"));

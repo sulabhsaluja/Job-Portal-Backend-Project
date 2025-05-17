@@ -6,38 +6,33 @@
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon">
     <title>InternSpot</title>
+  </head>
+  <body>
 
-    <header>
-      <div class="logo">
-        <a href="/">InternSpot</a>
-      </div>
-
-      <nav id="navLinks">
-        <a href="/">Home</a>
-        <a href="/applied-jobs">Applied Jobs</a>
-        <a href="/jobs">Opportunities</a>
-        <a href="/login" class="login">Log In</a>
-        <a href="/signup" class="sign-up">Sign Up</a>
-      </nav>
-
-      <div class="hamburger" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </header>
+    {{> navbar}}
 
     <script>
-  function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
-  }
-</script>
+      function toggleMenu() {
+        const navLinks = document.querySelector("#navLinks");
+        navLinks.classList.toggle("active");
+        const hamburger = document.querySelector(".hamburger");
+        const isActive = navLinks.classList.contains("active");
+        hamburger.setAttribute("aria-expanded", isActive);
+      }
+
+      document.querySelectorAll("#navLinks a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const navLinks = document.querySelector("#navLinks");
+          navLinks.classList.remove("active");
+          document.querySelector(".hamburger").setAttribute("aria-expanded", "false");
+        });
+      });
+    </script>
 
     <!-- HERO SECTION -->
     <section class="hero">
       <h1>Welcome to InternSpot</h1>
-      <p>Your gateway to a better career. Search, apply, or post jobs with
-        ease.</p>
+      <p>Your gateway to a better career. Search, apply, or post jobs with ease.</p>
       <a href="/login">Get Started</a>
     </section>
 
@@ -60,7 +55,6 @@
       <h2>Trending Jobs</h2>
       <div class="card-slider">
         <div class="card-track">
-          <!-- Repeatable Card -->
           <div class="job-card">
             <h3>Frontend Developer</h3>
             <p>Company: TechNova</p>
@@ -85,7 +79,6 @@
             <p>Location: Hyderabad</p>
           </div>
 
-          <!-- Duplicate cards for infinite scroll illusion -->
           <div class="job-card">
             <h3>Frontend Developer</h3>
             <p>Company: TechNova</p>
@@ -105,47 +98,24 @@
     <section class="categories">
       <h2>Explore Job Categories</h2>
       <div class="category-cards">
-        <div class="cat-card">💻 IT & Software</div>
-        <div class="cat-card">📈 Business & Finance</div>
-        <div class="cat-card">🩺 Healthcare</div>
-        <div class="cat-card">🎨 Design</div>
-        <div class="cat-card">⚖️ Legal</div>
+        <div class="cat-card">IT & Software</div>
+        <div class="cat-card">Business & Finance</div>
+        <div class="cat-card">Healthcare</div>
+        <div class="cat-card">Design</div>
+        <div class="cat-card">Legal</div>
       </div>
     </section>
 
     <!-- TESTIMONIALS -->
     <section class="testimonials">
       <h2>What Our Users Say</h2>
-      <blockquote>"This platform helped me land my dream job in just 2 weeks!" –
-        Riya, Developer</blockquote>
-      <blockquote>"We found amazing talent for our startup – super easy!" –
-        Nikhil, Startup Founder</blockquote>
+      <blockquote>"This platform helped me land my dream job in just 2 weeks!" – Riya, Developer</blockquote>
+      <blockquote>"We found amazing talent for our startup – super easy!" – Nikhil, Startup Founder</blockquote>
     </section>
 
     <!-- FOOTER -->
     <footer>
       <p>&copy; 2025 InternSpot. All rights reserved.</p>
     </footer>
-
-    <script>
-      function toggleMenu() {
-        const navLinks = document.querySelector(".nav-links");
-        navLinks.classList.toggle("active");
-        const hamburger = document.querySelector(".hamburger");
-        const isActive = navLinks.classList.contains("active");
-        hamburger.setAttribute("aria-expanded", isActive);
-      }
-
-      // Close the menu when a link is clicked
-      document.querySelectorAll(".nav-links a").forEach((link) => {
-        link.addEventListener("click", () => {
-          const navLinks = document.querySelector(".nav-links");
-          navLinks.classList.remove("active");
-          document
-            .querySelector(".hamburger")
-            .setAttribute("aria-expanded", "false");
-        });
-      });
-    </script>
   </body>
 </html>

@@ -44,7 +44,7 @@ const jobSchema = new mongoose.Schema({
   applications: [
     {
       user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
-      coverLetter: { type: String }, // ✅ Added field to store applicant’s cover letter
+      coverLetter: { type: String },
       status: {
         type: String,
         enum: ["pending", "accepted", "rejected"],
